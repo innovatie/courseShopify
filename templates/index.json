@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "featured_collection_block": {
+            "type": "featured-collection",
+            "settings": {
+                "featured_collection": "Hydrogen",
+                "title": "Featured Collection Hydrogen"
+            }
+        }
+    },
+    "order": [
+        "featured_collection_block"
+    ]
+}
