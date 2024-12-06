@@ -1,0 +1,52 @@
+<section class="testimonials-section container py-4 text-center">
+    <h2 class="mb-3">{{ section.settings.title }}</h2>
+    
+    <div class="row">
+      {% for block in section.blocks %}
+        <div class="col-md-4 mb-3">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"{{ block.settings.testimonial }}"</p>
+            <h5 class="testimonial-author">{{ block.settings.author }}</h5>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Testimonials",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "title",
+        "default": "Lo que dicen nuestros clientes"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Testimonial",
+        "type": "testimonial",
+        "settings": [
+          {
+            "type": "textarea",
+            "label": "Testimonial",
+            "id": "testimonial"
+          },
+          {
+            "type": "text",
+            "label": "Author",
+            "id": "author"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials"
+      }
+    ]
+  }
+  {% endschema %}
+  
