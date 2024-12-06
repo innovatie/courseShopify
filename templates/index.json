@@ -1,14 +1,22 @@
 {
     "sections": {
-        "featured_collection_block": {
-            "type": "featured-collection",
-            "settings": {
-                "featured_collection": "Hydrogen",
-                "title": "Featured Collection Hydrogen"
-            }
+      "featured_collection_block": {
+        "type": "featured-collection",
+        "settings": {
+          "featured_collection": "Hydrogen",
+          "title": "Featured Collection Hydrogen"
         }
+      },
+      "testimonials_section": {
+        "type": "testimonial",
+        "settings": {
+          "title": "What our clients say"
+        }
+      }
     },
     "order": [
-        "featured_collection_block"
+      "featured_collection_block",
+      "testimonials_section"
     ]
 }
+  
