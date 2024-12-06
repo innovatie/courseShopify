@@ -32,11 +32,19 @@
             "testimonial": "Testimonial 2",
             "author": "user2"
           }
+        },
+        "testimonial_A9zQCB": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "Testimonial 3",
+            "author": "user 3"
+          }
         }
       },
       "block_order": [
         "testimonial_yGjLAM",
-        "testimonial_Wk6HPe"
+        "testimonial_Wk6HPe",
+        "testimonial_A9zQCB"
       ],
       "settings": {
         "title": "What our clients say"
