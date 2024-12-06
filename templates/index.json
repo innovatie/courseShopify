@@ -1,14 +1,23 @@
 {
     "sections": {
-        "featured_collection_block": {
-            "type": "featured-collection",
-            "settings": {
-                "featured_collection": "Hydrogen",
-                "title": "Featured Collection Hydrogen"
-            }
+      "featured_collection_block": {
+        "type": "featured-collection",
+        "settings": {
+          "featured_collection": "Hydrogen",
+          "title": "Featured Collection Hydrogen"
         }
+      },
+      "banner": {
+        "type": "banner",
+        "settings": {
+          "title": "Welcome to Our Store",
+          "content": "Explore our collection!",
+          "background_color": "#ffffff",
+          "title_color": "#1f1f1f",
+          "content_color": "#181818"
+        }
+      }
     },
-    "order": [
-        "featured_collection_block"
-    ]
+    "order": ["featured_collection_block", "banner"]
 }
+  
