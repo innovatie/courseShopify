@@ -1,14 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "featured_collection_block": {
-            "type": "featured-collection",
-            "settings": {
-                "featured_collection": "Hydrogen",
-                "title": "Featured Collection Hydrogen"
-            }
-        }
+  "sections": {
+    "featured_collection_block": {
+      "type": "featured-collection",
+      "settings": {
+        "featured_collection": "hydrogen",
+        "title": "Featured Collection Hydrogen"
+      }
     },
-    "order": [
-        "featured_collection_block"
-    ]
+    "faq_XzaqLK": {
+      "type": "faq",
+      "blocks": {
+        "question_czMtKj": {
+          "type": "question",
+          "settings": {
+            "question": "Question 1",
+            "answer": "Answer 1"
+          }
+        },
+        "question_fNmdYT": {
+          "type": "question",
+          "settings": {
+            "question": "Question 2",
+            "answer": "Answer 2"
+          }
+        }
+      },
+      "block_order": [
+        "question_czMtKj",
+        "question_fNmdYT"
+      ],
+      "settings": {
+        "headline": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": [
+    "featured_collection_block",
+    "faq_XzaqLK"
+  ]
 }
