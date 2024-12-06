@@ -1,22 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-      "featured_collection_block": {
-        "type": "featured-collection",
-        "settings": {
-          "featured_collection": "Hydrogen",
-          "title": "Featured Collection Hydrogen"
-        }
-      },
-      "testimonials_section": {
-        "type": "testimonial",
-        "settings": {
-          "title": "What our clients say"
-        }
+  "sections": {
+    "featured_collection_block": {
+      "type": "featured-collection",
+      "settings": {
+        "featured_collection": "hydrogen",
+        "title": "Featured Collection Hydrogen"
       }
     },
-    "order": [
-      "featured_collection_block",
-      "testimonials_section"
-    ]
+    "testimonials_section": {
+      "type": "testimonial",
+      "blocks": {
+        "testimonial_yGjLAM": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "Testimonial 1",
+            "author": "user 1"
+          }
+        },
+        "testimonial_Wk6HPe": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "Testimonial 2",
+            "author": "user2"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_yGjLAM",
+        "testimonial_Wk6HPe"
+      ],
+      "settings": {
+        "title": "What our clients say"
+      }
+    }
+  },
+  "order": [
+    "featured_collection_block",
+    "testimonials_section"
+  ]
 }
-  
