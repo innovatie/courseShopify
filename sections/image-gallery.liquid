@@ -1,0 +1,156 @@
+{%- unless settings.page_width != blank -%}
+  {%- assign settings_page_width = 1600 -%}
+{%- endunless -%}
+{%- assign images_per_row = section.settings.images_per_row | default: 3 -%}
+{%- assign images_per_row_mobile = section.settings.images_per_row_mobile | default: 3 -%}
+{%- assign grid_gap = section.settings.grid_gap | default: 10 -%}
+
+<section class="" id="section-{{ section.id }}">
+  {%- if section.settings.heading != blank -%}
+    <div class="page-width">{{ section.settings.heading }}</div>
+  {%- endif -%}
+  
+  {%- if section.blocks.size > 0 -%}
+  <div class="custom-image-gallery {% unless section.settings.full_width != blank %} page-width{% endunless %}">
+    {%- for block in section.blocks -%}
+      {%- assign image = block.settings.image -%}
+      <a href="{{ image | img_url: '1600x' }}" data-desktop="{{ image | img_url: '1600x' }}" data-mobile="{{ image | img_url: '749x' }}" class="custom-image-gallery__item" target="_blank" title="{{ image.alt }}">
+          <img 
+            srcset="
+                  {%- if image.width >= 165 -%}{{ image | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if image.width >= 360 -%}{{ image | image_url: width: 360 }} 360w,{%- endif -%}
+                  {%- if image.width >= 533 -%}{{ image | image_url: width: 533 }} 533w,{%- endif -%}
+                  {%- if image.width >= 720 -%}{{ image | image_url: width: 720 }} 720w,{%- endif -%}
+                  {%- if image.width >= 940 -%}{{ image | image_url: width: 940 }} 940w,{%- endif -%}
+                  {%- if image.width >= 1066 -%}{{ image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                  {{ image | image_url }} {{ image.width }}w
+                "
+            src="{{ image | image_url: width: 533 }}"
+            sizes="(min-width: {{ settings_page_width }}px) {{ settings_page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+            alt="{{ image.alt | default: page.title | append: " " | append: forloop.index }}"
+            loading="lazy"
+            >
+      </a>
+    {%- endfor -%}
+  </div>
+  
+  {%- endif -%}
+</section>
+
+<style>
+/* Gallery grid */
+.custom-image-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 30px;
+
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  /* Hide scrollbar for IE 10+ */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+  
+/* Hide scrollbar for WebKit/Blink */
+.custom-image-gallery::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+} 
+
+/* Gallery images */
+.custom-image-gallery a {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  position: relative;
+  cursor:pointer;
+}
+  
+.custom-image-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  position: absolute;
+}
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Image Gallery",
+  "settings": [
+    {
+      "type":"richtext",
+      "id":"heading",
+      "label":"Heading",
+      "default":"<h2>Image Gallery</h2>"
+    },
+    {
+      "type": "range",
+      "id": "images_per_row",
+      "label": "Images per row",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "images_per_row_mobile",
+      "label": "Images per row on mobile",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type":"checkbox",
+      "id":"full_width",
+      "label":"Full width gallery",
+      "default":true
+    },
+    {
+      "type":"checkbox",
+      "id":"mobile_slider",
+      "label":"Slider on mobile",
+      "default":true,
+      "info":"If checked, the images per row on mobile is ignored"
+    }
+  ],
+  "blocks":[
+    {
+      "type":"image",
+      "name":"Image",
+      "settings":[
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Image Gallery",
+      "category":"Image"
+    }
+  ]
+  
+}
+{% endschema %}
