@@ -1,11 +1,11 @@
 <div class="banner-section" style="background-color: {{ section.settings.background_color }};">
   <div class="container">
-    {% if section.settings.title %}
+    {% if section.settings.title != blank %}
       <h1 class="banner-title" style="color: {{ section.settings.title_color }};">
         {{ section.settings.title }}
       </h1>
     {% endif %}
-    {% if section.settings.content %}
+    {% if section.settings.content != blank %}
       <div class="banner-content" style="color: {{ section.settings.content_color }};">
         {{ section.settings.content }}
       </div>
@@ -50,7 +50,7 @@
   "presets": [
     {
       "name": "Default Banner",
-      "category": "Custom"
+      "category": "Custom Banner"
     }
   ]
 }
