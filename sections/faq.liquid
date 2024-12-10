@@ -1,7 +1,9 @@
 {% comment %} {{ 'section-faq.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 <div class="page-width faq container py-4">
-  <h2 class="h1">{{ section.settings.headline }}</h2>
+  {% if section.settings.headline != blank %}
+    <h2 class="h1">{{ section.settings.headline }}</h2>
+  {% endif %}
 
   {% if section.blocks.size > 0 %}
     {% for block in section.blocks %}
