@@ -1,0 +1,57 @@
+<div class="banner-section" style="background-color: {{ section.settings.background_color }};">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <h1 class="banner-title" style="color: {{ section.settings.title_color }};">
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+    {% if section.settings.content != blank %}
+      <div class="banner-content" style="color: {{ section.settings.content_color }};">
+        {{ section.settings.content }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Banner Title",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Banner Content",
+      "default": "Explore our collection!"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1f1f1f"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content Color",
+      "default": "#181818"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default Banner",
+      "category": "Custom Banner"
+    }
+  ]
+}
+{% endschema %}
