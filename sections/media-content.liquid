@@ -5,16 +5,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            {% if media_ctn_heading %}
+            {% if media_ctn_heading != blank %}
                 <{{ media_ctn_heading_size }} class="title">{{ media_ctn_heading }}</{{ media_ctn_heading_size }}>
             {% endif %}
-            {% if media_ctn_content %}
+            {% if media_ctn_content != blank %}
                 <div class="rich-text">{{ media_ctn_content }}</div>
             {% endif %}
         </div>
         <div class="col-md-6">
-            {% if media_ctn_image %}
-                <div class="main-img">{{ media_ctn_image | image_url: width: 500 | image_tag: class: 'img_class', loading: 'lazy'}}</div>
+            {% if media_ctn_image != blank %}
+                <div class="main-img">{{ media_ctn_image | image_url: width: 500 | image_tag: class: 'img-class', loading: 'lazy'}}</div>
             {% endif %}
         </div>
     </div>
