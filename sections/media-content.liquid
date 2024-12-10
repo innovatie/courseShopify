@@ -2,25 +2,23 @@
 {% assign media_ctn_heading_size = section.settings.heading_size %}
 {% assign media_ctn_content = section.settings.content %}
 {% assign media_ctn_image = section.settings.image %}
-<section class="media-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                {% if media_ctn_heading %}
-                    <{{ media_ctn_heading_size }} class="title">{{ media_ctn_heading }}</{{ media_ctn_heading_size }}>
-                {% endif %}
-                {% if media_ctn_content %}
-                    <div class="rich-text">{{ media_ctn_content }}</div>
-                {% endif %}
-            </div>
-            <div class="col-md-6">
-                {% if media_ctn_image %}
-                    <div class="main-img">{{ media_ctn_image | image_url: width: 500 | image_tag: class: 'img_class', loading: 'lazy'}}</div>
-                {% endif %}
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            {% if media_ctn_heading %}
+                <{{ media_ctn_heading_size }} class="title">{{ media_ctn_heading }}</{{ media_ctn_heading_size }}>
+            {% endif %}
+            {% if media_ctn_content %}
+                <div class="rich-text">{{ media_ctn_content }}</div>
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            {% if media_ctn_image %}
+                <div class="main-img">{{ media_ctn_image | image_url: width: 500 | image_tag: class: 'img_class', loading: 'lazy'}}</div>
+            {% endif %}
         </div>
     </div>
-</section>
+</div>
 
 {% schema %}
 {
