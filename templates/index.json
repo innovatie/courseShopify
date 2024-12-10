@@ -19,7 +19,7 @@
     "media_content_idCeCF": {
       "type": "media-content",
       "settings": {
-        "heading": "Section Heading",
+        "heading": "Heading",
         "heading_size": "h2",
         "content": "<p>lorem ipsum dolor...</p>",
         "image": "shopify://shop_images/theme_cover_image.jpg"
