@@ -21,7 +21,7 @@
       "settings": {
         "heading": "Heading",
         "heading_size": "h2",
-        "content": "",
+        "content": "<p>lorem ipsum dolor...</p>",
         "image": "shopify://shop_images/theme_cover_image.jpg"
       }
     }
