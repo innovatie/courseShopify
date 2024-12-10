@@ -1,4 +1,91 @@
+{% assign media_ctn_heading = section.settings.heading %}
+{% assign media_ctn_heading_size = section.settings.heading_size %}
+{% assign media_ctn_content = section.settings.content %}
+{% assign media_ctn_image = section.settings.image %}
 <section class="media-content">
     <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {% if media_ctn_heading %}
+                    <{{ media_ctn_heading_size }} class="title">{{ media_ctn_heading }}</{{ media_ctn_heading_size }}>
+                {% endif %}
+                {% if media_ctn_content %}
+                    <div class="rich-text">{{ media_ctn_content }}</div>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                {% if media_ctn_image %}
+                    <div class="main-img">{{ media_ctn_image | image_url: width: 500  loading: 'lazy'}}</div>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "Media Content",
+    "tag": "section",
+    "class": "media-content",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "select",
+            "id": "heading_size",
+            "label": "Heading Size",
+            "options": [
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              },
+              {
+                "value": "h5",
+                "label": "H5"
+              },
+              {
+                "value": "h6",
+                "label": "H6"
+              }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ],
+    "presets":[
+        {
+            "name": "Media Content",
+            "settings": {
+                "heading": "Section Heading",
+                "heading_size": "h2",
+                "content": "lorem ipsum dolor...",
+                "image": "Section Heading"
+            },
+        }
+    ]
+}
+{% endschema %}
