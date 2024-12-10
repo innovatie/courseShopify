@@ -5,13 +5,11 @@
 
   {% if section.blocks.size > 0 %}
     {% for block in section.blocks %}
-      {% if block.settings.question != blank and block.settings.answer != blank %}
-        <div class="faq__row">
-          <input type="checkbox" id="question-{{ forloop.index }}" class="faq__toggle">
-          <label for="question-{{ forloop.index }}" class="faq__question">{{ block.settings.question }}</label>
-          <div class="faq__answer">{{ block.settings.answer }}</div>
-        </div>
-      {% endif %}
+      <div class="faq__row">
+        <input type="checkbox" id="question-{{ forloop.index }}" class="faq__toggle">
+        <label for="question-{{ forloop.index }}" class="faq__question">{{ block.settings.question }}</label>
+        <div class="faq__answer">{{ block.settings.answer }}</div>
+      </div>
     {% endfor %}
   {% endif %}
 </div>
